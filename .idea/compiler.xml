@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="thymeleafdemo-employees-crud-security-with-jdbc-authentication" />
+        <module name="employees-management-system-jdbc-authentication-and-registration" />
+        <module name="employees-management-system-jdbc-authentication" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-security-custom-user-registration-demo-thymeleaf-spring-boot" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="employees-management-system-jdbc-authentication" options="-parameters" />
+      <module name="employees-management-system-jdbc-authentication-and-registration" options="-parameters" />
+      <module name="spring-security-custom-user-registration-demo-thymeleaf-spring-boot" options="-parameters" />
+      <module name="thymeleafdemo-employees-crud-security-with-jdbc-authentication" options="-parameters" />
+    </option>
+  </component>
+</project>

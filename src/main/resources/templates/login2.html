@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css" rel="stylesheet">
+</head>
+<body style="background: rgb(2,0,36);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,75,121,1) 0%, rgba(77,123,155,1) 43%, rgba(98,141,176,1) 100%);">
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col-12 col-sm-5 col-md-6 m-auto">
+            <div class="card border-0 shadow">
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger col-xs-offset-1 col-xs-10">
+                        Invalid username and password.
+                    </div>
+                </div>
+                <div th:if="${param.logout}">
+
+                    <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                        You have been logged out.
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <svg class="text-center my-3" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#24252a"  viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                    <form th:action="@{/authenticateTheUser}"
+                          method="POST" style="max-width:350px; margin:auto;">
+                        <input type="text" name="username" class="form-control my-4 py-3" placeholder="Username">
+                        <input type="password" name="password" class="form-control my-4 py-3" placeholder="Password">
+                        <div class="text-center mt-3">
+                            <button class="btn btn-primary w-50 p-2 mt-2">Login</button>
+                        </div>
+                    </form>
+                    <div class="mt-4">
+                        Don't have an account?
+                        <a th:href="@{/register/showRegistrationForm}" role="button" aria-pressed="true"> Register here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
